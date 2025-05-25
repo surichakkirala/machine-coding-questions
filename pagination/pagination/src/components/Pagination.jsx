@@ -12,8 +12,10 @@ const Pagination = () => {
     getProductData();
   }, []);
   const getProductData = async () => {
-    const data = await fetch("https://dummyjson.com/products?limit=200");
+    const productId = 1;
+    const data = await fetch("https://dummyjson.com/products/" + productId);
     const json = await data.json();
+    console.log(json);
     setProducts(json.products);
   };
   const handleNumPage = (num) => {
